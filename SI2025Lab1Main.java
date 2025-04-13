@@ -110,6 +110,9 @@ class TaskManager {
     public void markCategoryCompleted(String category) {
         // TODO: Implement bulk completion logic
     }
+    public void sortTasksByName() {
+        Collections.sort(tasks, Comparator.comparing(Task::getName, String.CASE_INSENSITIVE_ORDER));
+    }
 }
 
 public class SI2025Lab1Main {
@@ -120,7 +123,9 @@ public class SI2025Lab1Main {
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
-
+        manager.sortTasksByName();
+        System.out.println("Sorted Tasks by Name:");
         manager.printTasks();
+        
     }
 }
