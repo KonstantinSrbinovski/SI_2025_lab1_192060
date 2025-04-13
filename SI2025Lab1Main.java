@@ -111,6 +111,7 @@ class TaskManager {
         // TODO: Implement bulk completion logic
     }
 
+
     public void sortTasksByName() {
         Collections.sort(tasks, Comparator.comparing(Task::getName, String.CASE_INSENSITIVE_ORDER));
 
@@ -125,6 +126,10 @@ class TaskManager {
 
         return filteredTasks;
 
+
+    public void removeTask(String name) {
+        tasks.removeIf(task -> task.getName().equalsIgnoreCase(name));
+
     }
 }
 
@@ -137,6 +142,9 @@ public class SI2025Lab1Main {
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
+        System.out.println("Before removing:");
+        manager.printTasks();
+
 
         manager.sortTasksByName();
         System.out.println("Sorted Tasks by Name:");
@@ -148,6 +156,11 @@ public class SI2025Lab1Main {
             System.out.println(task);
         }
 
+
+
+        manager.removeTask("Submit assignment");
+
+        System.out.println("\nAfter removing 'Submit assignment':");
 
         manager.printTasks();
         
