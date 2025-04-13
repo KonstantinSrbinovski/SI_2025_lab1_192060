@@ -1,0 +1,19 @@
+*   98c34e3 Merge branch 'issue-1-remove-task-by-name'
+|\  
+| * 46cb316 Implement remove task by name
+* |   045fd47 Merge pull request #11 from KonstantinSrbinovski/issue-3-list-tasks-sorted-by-name
+|\ \  
+| * \   fada725 Merge branch 'master' into issue-3-list-tasks-sorted-by-name
+| |\ \  
+| |/ /  
+|/| |   
+* | |   96dc83f Merge pull request #10 from KonstantinSrbinovski/issue-5-filter-tasks-by-category
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 55f1790 Implemented filterByCategory method
+|/ /  
+| * 34873ac Implement list tasks sorted by name
+|/  
+* cc81afa Add starter code.
+* 77282b1 Initial commit.

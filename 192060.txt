@@ -1,0 +1,31 @@
+Дел 2:
+1.откако избрав на кој три issue ке работам ги креирав гранките на github и ги повлеков во мојот локален репозиториум
+-git fetch origin
+-git checkout issue-1-remove-task-by-name
+-git fetch origin
+-git checkout issue-3-list-tasks-sorted-by-name
+-git fetch origin
+-git checkout issue-5-filter-tasks-by-category
+2.ја имплементирав функцијата за issue-5-filter-tasks-by-category
+направив:
+-git add .
+-got commit -m "Implemented filterBycategory method"
+и на github направив pull request за спојување на issue-5-filter-tasks-by-category гранката со мастер гранката
+3.истот го направив и за функцијата за issue-3-list-tasks-sorted-by-name
+4.истот го направив и за функцијата за issue-1-remove-task-by-name
+5.потоа ги споив со мастер со кликање на копчето Merge
+pull request,првиот го споив,за вториот ми се јави конфликт го решив,го решив што ги прифатив и двете решение ги избришав лините и зачував
+6.потоа ако отидеме на github и отидеме во projects во канбан таблата може да видиме дека тиа што сме ги решиле и споиле со мастер автоматски се префрлиле на од полето In progress во Done
+7.потоа се префрлив на гранката мастер
+-git checkout master
+ја упдајтирав мојата локална мастер гранка
+со
+-git pull origin master
+и се изврши со fast forward стратегија
+и после тоа направив
+-git push origin master
+и приметив дека pull requestot се затвори за таа гранка и тој issue се премести во Done
+8.направив logs.txt фајл и со команадата
+git log --oneline --graph --all > logs.txt
+директно ја ископирав содржина во фајлот. 
+направив git add на фалјовите и git commit за finale commit
