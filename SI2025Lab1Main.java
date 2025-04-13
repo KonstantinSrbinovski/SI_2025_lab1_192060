@@ -110,6 +110,10 @@ class TaskManager {
     public void markCategoryCompleted(String category) {
         // TODO: Implement bulk completion logic
     }
+
+    public void sortTasksByName() {
+        Collections.sort(tasks, Comparator.comparing(Task::getName, String.CASE_INSENSITIVE_ORDER));
+
     public List<Task> filterByCategory(String category) {
         List<Task> filteredTasks = new ArrayList<>();
 
@@ -120,6 +124,7 @@ class TaskManager {
         }
 
         return filteredTasks;
+
     }
 }
 
@@ -132,6 +137,10 @@ public class SI2025Lab1Main {
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
+
+        manager.sortTasksByName();
+        System.out.println("Sorted Tasks by Name:");
+
         // Тестирање на filterByCategory
         List<Task> personalTasks = manager.filterByCategory("Personal");
         System.out.println("Personal Tasks:");
@@ -139,6 +148,8 @@ public class SI2025Lab1Main {
             System.out.println(task);
         }
 
+
         manager.printTasks();
+        
     }
 }
