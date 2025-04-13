@@ -110,6 +110,9 @@ class TaskManager {
     public void markCategoryCompleted(String category) {
         // TODO: Implement bulk completion logic
     }
+    public void removeTask(String name) {
+        tasks.removeIf(task -> task.getName().equalsIgnoreCase(name));
+    }
 }
 
 public class SI2025Lab1Main {
@@ -120,7 +123,12 @@ public class SI2025Lab1Main {
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
+        System.out.println("Before removing:");
+        manager.printTasks();
 
+        manager.removeTask("Submit assignment");
+
+        System.out.println("\nAfter removing 'Submit assignment':");
         manager.printTasks();
     }
 }
