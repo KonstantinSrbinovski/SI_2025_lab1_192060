@@ -110,7 +110,19 @@ class TaskManager {
     public void markCategoryCompleted(String category) {
         // TODO: Implement bulk completion logic
     }
+    public List<Task> filterByCategory(String category) {
+        List<Task> filteredTasks = new ArrayList<>();
+
+        for (Task task : tasks) {
+            if (task.getCategory().equalsIgnoreCase(category)) {
+                filteredTasks.add(task);
+            }
+        }
+
+        return filteredTasks;
+    }
 }
+
 
 public class SI2025Lab1Main {
     public static void main(String[] args) {
@@ -120,6 +132,12 @@ public class SI2025Lab1Main {
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
         // MISSING: Calls to the new methods that will be implemented
+        // Тестирање на filterByCategory
+        List<Task> personalTasks = manager.filterByCategory("Personal");
+        System.out.println("Personal Tasks:");
+        for (Task task : personalTasks) {
+            System.out.println(task);
+        }
 
         manager.printTasks();
     }
